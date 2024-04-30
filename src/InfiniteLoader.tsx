@@ -1,14 +1,13 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, {useRef, useEffect, useState, useCallback} from 'react';
 
 interface InfiniteLoaderProps {
-    loadMore: () => Promise<void>;
+    loaderMore: () => Promise<void>;
     threshold?: number;
 }
 
-const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({loadMore, threshold = 0.8}) => {
+const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0.8}) => {
     const loadingRef = useRef<HTMLDivElement>(null);
     const [isFetching, setIsFetching] = useState(false);
-
 
     const handleObserver = useCallback((entities: IntersectionObserverEntry[]) => {
         const target = entities[0];
@@ -29,9 +28,9 @@ const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({loadMore, threshold = 0.
         return () => {
             if (loadingRef.current) {
                 observer.unobserve(loadingRef.current);
+
             }
         };
-        
     }, [handleObserver, threshold]);
 
     useEffect(() => {
@@ -40,19 +39,11 @@ const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({loadMore, threshold = 0.
         }
     }, [isFetching, loadMore]);
 
-
     return (
         <div ref={loadingRef}>
             {isFetching && <p>Loading more...</p>}
         </div>
-    );
-
-
-
-
-};
-
+    )
+}
 
 export default InfiniteLoader;
-
-

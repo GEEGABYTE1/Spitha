@@ -1,11 +1,10 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import {useState, useRef, useEffect, useCallback} from 'react';
 
-type UpdateFunction<T> = (prev: T) => T;
+type UpdateFunction<T> = (prev: T) => T; 
 
-export function useQueueState<T>(initialValue: T):[T, (updateFn: UpdateFunction<T>) => void] {
-    const [state, setState] = useState(<T>)(initialValue);
+export function useQueueState<T>(initialValue: T): [T, (updateFn: UpdateFunction<T>) => void] {
+    const [state, setState] = useState<T>(initialValue);
     const queue = useRef<UpdateFunction<T>[]>([]);
-
 
     const processQueue = useCallback(() => {
         setState(prev => {
@@ -19,18 +18,17 @@ export function useQueueState<T>(initialValue: T):[T, (updateFn: UpdateFunction<
 
             return newState;
         })
-    }, []);
+    }, [])
 
     useEffect(() => {
-        if (queue.current.length >0 ) {
+        if (queue.current.length > 0) {
             setTimeout(processQueue, 0);
         }
     }, [processQueue]);
 
-    const enqueueState = (updateFn: UpdateFunction<T>) => {
+    const enqueueState = useCallback((updateFn: updateFunction<T>) => {
         queue.current.push(updateFn);
-    }
-
-
+    }, [])
+    
     return [state, enqueueState];
 }
