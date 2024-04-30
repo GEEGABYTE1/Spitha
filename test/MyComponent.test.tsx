@@ -30,8 +30,8 @@ describe('MyComponent', () => {
         const renderingTime = measureRenderingTime(
             <MyComponent
                 fetchData={() => Promise.resolve([])}
-                initialData={[]}
-                threshold={0.5}
+                initialData={["hello world"]}
+                threshold={0.8}
             />
         );
         console.log(`Rendering time with custom data: ${renderingTime} milliseconds`);
