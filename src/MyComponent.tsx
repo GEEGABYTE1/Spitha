@@ -1,8 +1,6 @@
-import React, {useCallback, useMemo} from 'react';
-
+import React, { useCallback, useMemo } from 'react';
 import InfiniteLoader from './InfiniteLoader';
-import {useQueueState} from './useQueueState';
-
+import { useQueueState } from './useQueueState';
 
 interface MyComponentProps {
     fetchData: () => Promise<any>;
@@ -10,8 +8,7 @@ interface MyComponentProps {
     threshold?: number;
 }
 
-
-const MyComponent: React.FC<MyComponentProps> = ({fetchData, initialData = [], threshold=0.8}) => {
+const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8 }) => {
     const [data, enqueueDataUpdate] = useQueueState(initialData);
 
     const loadMore = useCallback(async () => {
@@ -21,11 +18,9 @@ const MyComponent: React.FC<MyComponentProps> = ({fetchData, initialData = [], t
 
     const memoizedLoadMore = useMemo(() => loadMore, [loadMore]);
 
-
     return (
         <InfiniteLoader loadMore={memoizedLoadMore} threshold={threshold} />
-
-    )
-}
+    );
+};
 
 export default MyComponent;

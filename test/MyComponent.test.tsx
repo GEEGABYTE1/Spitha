@@ -1,0 +1,30 @@
+import React from 'react';
+import { shallow, ShallowWrapper } from 'enzyme';
+import MyComponent from '../src/MyComponent';
+
+const measureRenderingTime = (component: React.ReactElement): number => {
+    const start = performance.now();
+    shallow(component as any); // Cast the component to 'any' type
+    const end = performance.now();
+    return end - start;
+};
+
+describe('MyComponent', () => {
+    it('renders without crashing', () => {
+        const renderingTime = measureRenderingTime(
+            <MyComponent fetchData={() => Promise.resolve([])} />
+        );
+        console.log(`Rendering time: ${renderingTime} milliseconds`);
+    });
+
+    it('renders with custom data', () => {
+        const renderingTime = measureRenderingTime(
+            <MyComponent
+                fetchData={() => Promise.resolve([])}
+                initialData={[]}
+                threshold={0.5}
+            />
+        );
+        console.log(`Rendering time with custom data: ${renderingTime} milliseconds`);
+    });
+});

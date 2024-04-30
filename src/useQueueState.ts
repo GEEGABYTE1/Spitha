@@ -26,7 +26,7 @@ export function useQueueState<T>(initialValue: T): [T, (updateFn: UpdateFunction
         }
     }, [processQueue]);
 
-    const enqueueState = useCallback((updateFn: updateFunction<T>) => {
+    const enqueueState = useCallback((updateFn: UpdateFunction<T>) => {
         queue.current.push(updateFn);
     }, [])
     
