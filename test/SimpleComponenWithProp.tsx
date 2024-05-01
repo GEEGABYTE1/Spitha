@@ -6,7 +6,7 @@ interface TestComponentProps {
 
 
 const TestComponent: React.FC<TestComponentProps> = ({message}) => {
-    return <div>message</div>;
+    return <div>`{message}`</div>;
 }
 
 

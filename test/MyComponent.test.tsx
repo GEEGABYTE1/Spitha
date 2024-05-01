@@ -3,6 +3,7 @@ import { shallow, ShallowWrapper } from 'enzyme';
 import MyComponent from '../src/MyComponent';
 import SimpleComponent from './SimpleComponent';
 import TestComponent from './SimpleComponenWithProp';
+import {render} from '@testing-library/react'
 
 const measureRenderingTime = (component: React.ReactElement): number => {
     const start = performance.now();
@@ -43,6 +44,8 @@ describe('MyComponent', () => {
             console.log(`Rendering time for TestComponent: ${renderingTime} milliseconds`);
         });
     });
+    
+   
 
 
 
