@@ -1,11 +1,12 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { ReactNode, useRef, useEffect, useState, useCallback } from 'react';
 
 interface InfiniteLoaderProps {
     loadMore: () => Promise<void>;
     threshold?: number;
+    children?: ReactNode;
 }
 
-const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0.8 }) => {
+const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0.8, children }) => {
     const loadingRef = useRef<HTMLDivElement>(null);
     const [isFetching, setIsFetching] = useState(false);
 
