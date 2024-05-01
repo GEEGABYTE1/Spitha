@@ -4,18 +4,20 @@ interface InfiniteLoaderProps {
     loadMore: () => Promise<void>;
     threshold?: number;
     children?: ReactNode;
+    prop?:any;
 }
 
-const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0.8, children }) => {
+const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0.8, children, prop }) => {
     const loadingRef = useRef<HTMLDivElement>(null);
     const [isFetching, setIsFetching] = useState(false);
 
     const handleObserver = useCallback((entities: IntersectionObserverEntry[]) => {
         const target = entities[0];
-        if (target.isIntersecting) {
+        if (target.isIntersecting && !isFetching) {
             setIsFetching(true);
+            loadMore().then(() => setIsFetching(false)).catch(() => setIsFetching(false));
         }
-    }, []);
+    }, [isFetching, loadMore]);  
 
     useEffect(() => {
         const observer = new IntersectionObserver(handleObserver, {
@@ -33,15 +35,10 @@ const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0
         };
     }, [handleObserver, threshold]);
 
-    useEffect(() => {
-        if (isFetching) {
-            loadMore().then(() => setIsFetching(false));
-        }
-    }, [isFetching, loadMore]);
-
     return (
-        <div ref={loadingRef}>
-            {isFetching && <p>Loading more...</p>}
+        <div>
+            <div ref={loadingRef}>{prop}</div>
+            {isFetching}
         </div>
     );
 };

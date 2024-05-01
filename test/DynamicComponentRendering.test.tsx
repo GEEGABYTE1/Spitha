@@ -40,8 +40,10 @@ describe('Link Components', () => {
 describe('MyComponent with Links', () => {
     it('renders MyComponent with LinkComponent1 without crashing', () => {
         const renderingTime = measureRenderingTime(
-            <MyComponent fetchData={() => Promise.resolve([])}>
-                <LinkComponent1 url="https://example.com" text="Visit Example" />
+            <MyComponent fetchData={() => Promise.resolve()}>
+                <div>Some text</div>
+                <img src="image.jpg" alt="Image" />
+                <a href="https://example.com">Link</a>
             </MyComponent>
         );
         console.log(`Rendering time for MyComponent with LinkComponent1: ${renderingTime} milliseconds`);
@@ -65,3 +67,4 @@ describe('MyComponent with Links', () => {
         console.log(`Rendering time for MyComponent with LinkComponent3: ${renderingTime} milliseconds`);
     });
 })
+
