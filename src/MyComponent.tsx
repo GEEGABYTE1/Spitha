@@ -7,9 +7,10 @@ interface MyComponentProps {
     initialData?: any[];
     threshold?: number;
     children?: React.ReactNode; 
+    style?: React.CSSProperties;
 }
 
-const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8, children }) => {
+const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8, children, style}) => {
     const [data, enqueueDataUpdate] = useQueueState(initialData);
 
     const updateData = useCallback((newData: any[]) => {
@@ -25,7 +26,7 @@ const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], 
 
     return (
         <InfiniteLoader loadMore={memoizedLoadMore} threshold={threshold}>
-            {children} 
+             <div style={style}>{children}</div> 
         </InfiniteLoader>
     );
 };

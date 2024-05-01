@@ -5,6 +5,7 @@ interface InfiniteLoaderProps {
     threshold?: number;
     children?: ReactNode;
     prop?:any;
+    style?:React.CSSProperties
 }
 
 const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0.8, children, prop }) => {
