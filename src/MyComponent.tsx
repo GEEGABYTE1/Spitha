@@ -1,30 +1,39 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+import { debounce } from 'lodash'; // Assuming lodash is added to your project
 import InfiniteLoader from './InfiniteLoader';
 import { useQueueState } from './useQueueState';
 
-interface MyComponentProps {
-    fetchData: () => Promise<any>;
-    initialData?: any[];
-    threshold?: number;
-}
+const useDebouncedEffect = (effect, delay, deps) => {
+  useEffect(() => {
+    const handler = setTimeout(() => effect(), delay);
 
-const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8 }) => {
+    return () => clearTimeout(handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [...deps || [], delay]);
+};
+
+const MyComponent = React.memo(({ fetchData, initialData = [], threshold = 0.8 }) => {
     const [data, enqueueDataUpdate] = useQueueState(initialData);
 
-    const updateData = useCallback((newData: any[]) => {
+    // Memoized update function
+    const updateData = useCallback((newData) => {
         enqueueDataUpdate(prevData => [...prevData, ...newData]);
-    }, [enqueueDataUpdate])
+    }, [enqueueDataUpdate]);
 
-    const loadMore = useCallback(async () => {
+    // Debouncing the fetch data function
+    const debouncedLoadMore = useCallback(debounce(async () => {
         const newData = await fetchData();
         updateData(newData);
-    }, [fetchData, updateData]);
+    }, 300), [fetchData, updateData]);
 
-    const memoizedLoadMore = useMemo(() => loadMore, [loadMore]);
+    // useMemo for dependencies that seldom change
+    const loadMore = useMemo(() => debouncedLoadMore, [debouncedLoadMore]);
 
     return (
-        <InfiniteLoader loadMore={memoizedLoadMore} threshold={threshold} />
+        <InfiniteLoader loadMore={loadMore} threshold={threshold}>
+            <h1>Hello</h1>
+        </InfiniteLoader>
     );
-};
+});
 
 export default MyComponent;
