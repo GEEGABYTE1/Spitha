@@ -53,9 +53,8 @@ describe('Test Components', () => {
   });
 
   afterAll(() => {
-    const averageComponentsTime = componentsTime / count;
-    const averageMyComponentsTime = myComponentsTime / count;
-    const percentageIncrease = ((averageComponentsTime - averageMyComponentsTime) / averageComponentsTime) * 100;
+    
+    const percentageIncrease = ((componentsTime - myComponentsTime) / myComponentsTime) * 100;
     console.log(`Average Percentage Increase of Data Rendering with MyComponent: ${percentageIncrease}%`);
   });
 });

@@ -27,7 +27,9 @@ function renderData(data: React.ReactNode) {
 
 
 let count = 0;
-let sum = 0;
+let norm_component = 0 
+let mycomponent = 0
+
 
 describe('Test Components', () => {
     components.forEach((Component, index) => {
@@ -39,16 +41,15 @@ describe('Test Components', () => {
             const renderingTimeMyComponent = measureRenderingTime(<MyComponent fetchData={() => Promise.resolve()}><Component /></MyComponent>);
             console.log(`Rendering Time of Component with MyComponent: ${renderingTimeMyComponent}`);
 
-            const percentageIncrease = ((renderingTimeMyComponent - renderingTime) / renderingTime) * 100;
-            console.log(`Percentage Increase: ${percentageIncrease}%`);
-
-            sum += percentageIncrease;
-            count++;
+            norm_component += renderingTime
+            mycomponent += renderingTimeMyComponent 
+            count += 1;
+           
         });
     });
 
     afterAll(() => {
-        const averagePercentageIncrease = sum / count;
+        const averagePercentageIncrease = ((norm_component - mycomponent) / norm_component ) * 100;
         console.log(`Average Percentage Increase of Component Rendering with MyComponent: ${averagePercentageIncrease}%`);
     });
 });
