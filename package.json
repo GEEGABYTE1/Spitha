@@ -1,6 +1,6 @@
 {
   "name": "spitha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Quick React Component that makes React Components Quicker",
   "main": "src/index.ts",
   "license": "MIT",
