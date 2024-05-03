@@ -1,6 +1,6 @@
 {
-  "name": "Spitha",
-  "version": "1.0.0",
+  "name": "spitha",
+  "version": "1.0.2",
   "description": "A Quick React Component that makes React Components Quicker",
   "main": "src/index.ts",
   "license": "MIT",
@@ -12,9 +12,9 @@
     "priorityqueuejs": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "scripts": "tsc",
     "text-encoding": "^0.7.0",
     "ts-node": "^10.9.2",
-    "scripts": "tsc",
     "ts-priority-queue": "^0.1.1"
   },
   "devDependencies": {
