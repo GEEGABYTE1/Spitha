@@ -1,15 +1,21 @@
 {
-  "name": "Spathia",
+  "name": "Spitha",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A Quick React Component that makes React Components Quicker",
+  "main": "src/index.ts",
   "license": "MIT",
   "dependencies": {
+    "@types/priorityqueuejs": "^1.0.4",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0",
     "jest-environment-jsdom": "^29.7.0",
+    "lodash": "^4.17.21",
+    "priorityqueuejs": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "text-encoding": "^0.7.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "scripts": "tsc",
+    "ts-priority-queue": "^0.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
@@ -18,6 +24,8 @@
     "@babel/preset-typescript": "^7.24.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^15.0.6",
     "@types/enzyme": "^3.10.18",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.3.1",

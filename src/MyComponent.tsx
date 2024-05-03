@@ -26,7 +26,7 @@ const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], 
 
     return (
         <InfiniteLoader loadMore={memoizedLoadMore} threshold={threshold}>
-             <div style={style}>{children}</div> 
+             <div >{children}</div> 
         </InfiniteLoader>
     );
 };
