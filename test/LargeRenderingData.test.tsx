@@ -76,7 +76,7 @@ describe('Test Components', () => {
     });
     markdown.push(`Average Percentage Increase: ${((componentsTime - myComponentsTime ) / (componentsTime)) * 100}`)
 
-    fs.writeFileSync('RenderingNativeDataTest10.md', markdown.join('\n'));
+    //fs.writeFileSync('RenderingNativeDataTest10.md', markdown.join('\n'));
     console.log('Markdown file created with rendering times.');
   });
 });
