@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import LinkComponent1 from './components/LinkComponent1';
 import LinkComponent2 from './components/LinkComponent2';
 import LinkComponent3 from './components/LinkComponent3';
-import MyComponent from '../src/MyComponent';
+import Spitha from '../src/MyComponent';
 
 
 const measureRenderingTime = (component: React.ReactElement): number => {
@@ -40,29 +40,29 @@ describe('Link Components', () => {
 describe('MyComponent with Links', () => {
     it('renders MyComponent with LinkComponent1 without crashing', () => {
         const renderingTime = measureRenderingTime(
-            <MyComponent fetchData={() => Promise.resolve()}>
+            <Spitha fetchData={() => Promise.resolve()}>
                 <div>Some text</div>
                 <img src="image.jpg" alt="Image" />
                 <a href="https://example.com">Link</a>
-            </MyComponent>
+            </Spitha>
         );
         console.log(`Rendering time for MyComponent with LinkComponent1: ${renderingTime} milliseconds`);
     });
 
     it('renders MyComponent with LinkComponent2 without crashing', () => {
         const renderingTime = measureRenderingTime(
-            <MyComponent fetchData={() => Promise.resolve([])}>
+            <Spitha fetchData={() => Promise.resolve([])}>
                 <LinkComponent3 url="https://external.com" text="Go to External" />
-            </MyComponent>
+            </Spitha>
         );
         console.log(`Rendering time for MyComponent with LinkComponent2: ${renderingTime} milliseconds`);
     });
 
     it('renders MyComponent with LinkComponent3 without crashing', () => {
         const renderingTime = measureRenderingTime(
-            <MyComponent fetchData={() => Promise.resolve([])}>
+            <Spitha fetchData={() => Promise.resolve([])}>
                 <LinkComponent3 url="https://external.com" text="Go to External" />
-            </MyComponent>
+            </Spitha>
         );
         console.log(`Rendering time for MyComponent with LinkComponent3: ${renderingTime} milliseconds`);
     });

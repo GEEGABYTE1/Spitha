@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import fs from 'fs';
-import MyComponent from '../src/MyComponent';
+import Spitha from '../src/MyComponent';
 
 type TestComponent = React.FC;
 type MyComponentTest = React.FC;
@@ -18,11 +18,11 @@ const components: TestComponent[] = Array.from({ length: 100 }, (_, i) => {
 
 const MyComponents: MyComponentTest[] = Array.from({length: 100}, (_, i) => {
   return () => (
-    <MyComponent fetchData={() => Promise.resolve()} style={{ color: `#${i}${i}${i}` }}>
+    <Spitha fetchData={() => Promise.resolve()} style={{ color: `#${i}${i}${i}` }}>
       <h1>{`Test Component ${i + 1}`}</h1>
       <a href={`https://example.com/${i + 1}`}>Visit Test Component {i + 1}</a>
       <img src="image.jpg" alt="Image" />;
-    </MyComponent>
+    </Spitha>
   );
 });
 

@@ -10,7 +10,7 @@ interface MyComponentProps {
     style?: React.CSSProperties;
 }
 
-const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8, children, style}) => {
+const Spitha: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8, children, style}) => {
     const [data, enqueueDataUpdate] = useQueueState(initialData);
 
     const updateData = useCallback((newData: any[]) => {
@@ -31,4 +31,4 @@ const MyComponent: React.FC<MyComponentProps> = ({ fetchData, initialData = [], 
     );
 };
 
-export default MyComponent;
+export default Spitha;

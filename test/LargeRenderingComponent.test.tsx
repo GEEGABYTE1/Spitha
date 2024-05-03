@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import fs from 'fs';
-import MyComponent from '../src/MyComponent';
+import Spitha from '../src/MyComponent';
 
 type TestComponent = React.FC;
 
@@ -30,7 +30,7 @@ describe('Test Components', () => {
     components.forEach((Component, index) => {
         it(`renders TestComponent${index + 1} without crashing`, () => {
             const renderingTime = measureRenderingTime(<Component />);
-            const renderingTimeMyComponent = measureRenderingTime(<MyComponent fetchData={() => Promise.resolve()}><Component /></MyComponent>);
+            const renderingTimeMyComponent = measureRenderingTime(<Spitha fetchData={() => Promise.resolve()}><Component /></Spitha>);
 
             renderingData.push({
                 component: `TestComponent${index + 1}`,
