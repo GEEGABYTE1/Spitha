@@ -1,4 +1,7 @@
+
+
 module.exports = {
+    transpilePackages: ['spitha'],
     webpack: (config, options) => {
       config.module.rules.push({
         test: /\.tsx?$/,
