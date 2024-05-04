@@ -3,7 +3,7 @@ import InfiniteLoader from './InfiniteLoader';
 import { useQueueState } from './useQueueState';
 
 type MyComponentProps = {
-    fetchData?: () => Promise<any>;
+    fetchData: () => Promise<any>;
     initialData?: any[];
     threshold?: number;
     children?: React.ReactNode; 
