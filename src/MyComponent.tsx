@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import InfiniteLoader from './InfiniteLoader';
 import { useQueueState } from './useQueueState';
 
-interface MyComponentProps {
+type MyComponentProps = {
     fetchData?: () => Promise<any>;
     initialData?: any[];
     threshold?: number;
