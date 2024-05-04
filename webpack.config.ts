@@ -1,30 +1,21 @@
-import path from "path";
-import { Configuration } from "webpack";
+const path = require('path');
 
-const config: Configuration = {
-  entry: "./src/index.tsx",
+module.exports = {
+  entry: './src/index.ts', 
   module: {
     rules: [
       {
-        test: /\.(ts|js)?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-typescript"],
-          },
-        },
+        test: /\.tsx?$/, 
+        use: 'ts-loader', 
+        exclude: /node_modules\/(?!spitha)/,
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js', 'jsx'],
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: 'bundle.js', 
+    path: path.resolve(__dirname, 'dist'), 
   },
-  
 };
-
-export default config;
