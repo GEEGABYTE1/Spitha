@@ -12,7 +12,7 @@ type MyComponentProps = {
 
 const Spitha: React.FC<MyComponentProps> = ({ fetchData, initialData = [], threshold = 0.8, children, style}) => {
     const [data, enqueueDataUpdate] = useQueueState(initialData);
-
+    console.log("Initial Data: ", initialData)
     const updateData = useCallback((newData: any[]) => {
         enqueueDataUpdate(prevData => [...prevData, ...newData]);
     }, [enqueueDataUpdate])

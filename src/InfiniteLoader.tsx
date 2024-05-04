@@ -39,7 +39,8 @@ const InfiniteLoader: React.FC<InfiniteLoaderProps> = ({ loadMore, threshold = 0
     return (
         <div>
             <div ref={loadingRef}>{prop}</div>
-            <div>{isFetching.toString()}</div>
+            {isFetching && <div>Loading...</div>}
+            {children} 
         </div>
     );
 };
