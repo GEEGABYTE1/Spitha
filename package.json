@@ -5,7 +5,9 @@
   "main": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@types/priorityqueuejs": "^1.0.4",
