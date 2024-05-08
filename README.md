@@ -81,7 +81,7 @@ Spitha is React Component natively built in Typescript that does most of its wor
 
 For rendering native data, Spitha works exactly like any React Component. It can accept props, API calls, and etc, but with improved efficiency!
 
-Similarly, for rendering components (i.e., Chakra Styling), just wrap it around a Spitha Component, and your React App will be optimized - it's that simple.
+Similarly, for rendering components (i.e., Chakra Styling), just wrap it around a Spitha Component, and your React App will be optimized - it's that simple!
 
 Spitha is available for both native React Frameworks as well as Frameworks using Typescript to allow all types of applications to be optimized. 
 
@@ -152,6 +152,7 @@ type MyComponentProps = {
 
 Spitha does come with a few props to customize the rendering performance. By default, it is set to maximize the performance, but the user may choose to send in props, apply css-styling, etc.
 
+<div align="center">
 | Spitha Props | Value| 
 | -------- | -------- | 
 | `fetchData`  | Callback Function: `Promise<any>`  | 
@@ -159,6 +160,8 @@ Spitha does come with a few props to customize the rendering performance. By def
 | `threshold?` | `number` (optional) | 
 | `children?` | React Object: `React.ReactNode` (optional) | 
 | `style?` | React Object: `React.CSSProperties` (optional) | 
+
+</div>
 
 
 
