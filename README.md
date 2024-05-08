@@ -152,18 +152,18 @@ type MyComponentProps = {
 
 Spitha does come with a few props to customize the rendering performance. By default, it is set to maximize the performance, but the user may choose to send in props, apply css-styling, etc.
 
-<div align="center">
-| Spitha Props | Value| 
-| -------- | -------- | 
-| `fetchData`  | Callback Function: `Promise<any>`  | 
-| `initialData?` | `any[]` (optional) | 
-| `threshold?` | `number` (optional) | 
-| `children?` | React Object: `React.ReactNode` (optional) | 
-| `style?` | React Object: `React.CSSProperties` (optional) | 
 
-</div>
+<center>
 
+| Spitha Props | Value |
+| ------------ | ----- |
+| `fetchData`  | Callback Function: `Promise<any>` |
+| `initialData?` | `any[]` (optional) |
+| `threshold?` | `number` (optional) |
+| `children?` | React Object: `React.ReactNode` (optional) |
+| `style?` | React Object: `React.CSSProperties` (optional) |
 
+</center>
 
 
 Found below a few examples on how to use Spitha. Do note that these are basic implementations, and Spitha may work for most React applications.
