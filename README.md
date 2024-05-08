@@ -174,8 +174,8 @@ Here are a few examples on how to use Spitha. Do note that these are basic imple
         <h1>{`Test Component ${i + 1}`}</h1>
         <a href={`https://example.com/${i + 1}`}>Visit Test Component made with{i + 1}</a>
         <img src="image.jpg" alt="Image" />;
-    </div>           
-    ```
+    </div> 
+   ```
 
 ### ChakraUI Component Rendering with Spitha
     ```typescript
