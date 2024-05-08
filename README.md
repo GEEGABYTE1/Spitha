@@ -96,6 +96,7 @@ There has also been an improved Memoization technique employed in Spitha. It ens
 
 Spitha can also be customizable in how it can accept rendering. There is a trigger prop which represents a threshold. This threshold represents the distance the user has to be away from the component for it re-render. Such an Example can be viewed in the <a href="#readme-top">Examples Section</a>.
 
+**Note**: Performance and method of testing can be found in the `\testing` directory or [here](https://github.com/GEEGABYTE1/Spitha/tree/master/test):
 
 
 
