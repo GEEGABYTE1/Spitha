@@ -167,7 +167,7 @@ Spitha does come with a few props to customize the rendering performance. By def
 Here are a few examples on how to use Spitha. Do note that these are basic implementations, and Spitha may work for most React applications.
 
 ### Basic Data Implementation
-    ```typescript
+```typescript
     <div>
         <WelcomeComponent> Welcome to Spitha!</WelcomeComponent>
         <Text>React just got Faster!!!</Text>
@@ -175,10 +175,10 @@ Here are a few examples on how to use Spitha. Do note that these are basic imple
         <a href={`https://example.com/${i + 1}`}>Visit Test Component made with{i + 1}</a>
         <img src="image.jpg" alt="Image" />;
     </div> 
-   ```
+```
 
 ### ChakraUI Component Rendering with Spitha
-    ```typescript
+```typescript
     import { Text } from "@chakra-ui/react";
     import { Spitha } from "spitha";
 
@@ -194,10 +194,10 @@ Here are a few examples on how to use Spitha. Do note that these are basic imple
         </div>
     );
     }
-    ```
+```
 
 ### Changing Threshold 
-```typescript
+```ts
     <Spitha fetchData={() => Promise.resolve(['initialData'])} threshold={0.4} style={{ color: `#${i}${i}${i}` }}>
       <h1>{`Test Component ${i + 1}`}</h1>
       <a href={`https://example.com/${i + 1}`}>Visit Test Component {i + 1}</a>
