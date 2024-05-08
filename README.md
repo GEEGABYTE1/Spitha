@@ -225,8 +225,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Jaival Patel - [@patjaival](https://twitter.com/patjaival) | 
-Spitha: [https://github.com/GEEGABYTE1/Spitha](https://github.com/GEEGABYTE1/Spitha)
+[Jaival Patel](www.jaivalpatel.com) | 
+[Spitha](https://spitha-frontend.vercel.app/) | [Spitha Docs](https://github.com/GEEGABYTE1/Spitha)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
