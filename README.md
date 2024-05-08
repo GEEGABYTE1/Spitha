@@ -116,13 +116,13 @@ Setup your React Framework.
 
 After you have setup your project, make sure you have installed the `spitha` library.
 
-1. Go to your React Configuration file and ensure you have [webpack](https://webpack.js.org/guides/typescript/) installed. If you're having errors with typescript, I recommend looking at this Stack Overflow [Post](https://stackoverflow.com/questions/64592611/webpack-is-not-failing-on-typescript-error) for guidance.
+1. Go to your React Configuration file and ensure you have [webpack](https://webpack.js.org/guides/typescript/) installed. If you're having errors with typescript, I recommend looking at this Stack Overflow [Post](https://stackoverflow.com/questions/64592611/webpack-is-not-failing-on-typescript-error) for guidance. 
    ```typescript
    // next.config.mjs
    /** @type {import('next').NextConfig} */
         const nextConfig = {
         reactStrictMode: true,
-        transpilePackages: ['spitha']
+        transpilePackages: ['spitha'] //Ensuring Webpack can convert TS package into JS
         };
 
         export default nextConfig;
