@@ -75,8 +75,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About Spitha
-
-[![Product Name Screen Shot][images/product.png]](https://example.com)
+<p align="center">
+  <a href="https://github.com/GEEGA/Best-README-Template">
+    <img src="images/product.png" alt="Logo" width="80" height="80">
+  </a>
+</p>
 
 Spitha is React Component natively built in Typescript that does most of its work on the backend. It boosts rendering time of components by over 40% with improved Batching, Memoization, and Latency Update Technqiues. The component renders native data within 0.15 miliseconds and components within 0.12 miliseconds compared to the average React Component rendering times of 0.3 miliseconds. This is especially significant for applications that query and render API data and extensive visuals like graph networks. 
 
