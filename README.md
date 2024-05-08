@@ -77,7 +77,7 @@
 ## About Spitha
 <p align="center">
   <a href="https://github.com/GEEGA/Best-README-Template">
-    <img src="images/product.png" alt="Logo" width="500" height="400">
+    <img src="images/product2.png" alt="Logo" width="600" height="400">
   </a>
 </p>
 
