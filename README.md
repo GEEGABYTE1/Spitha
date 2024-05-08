@@ -74,7 +74,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About Spitha
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -88,6 +88,16 @@ Spitha is available for both native React Frameworks as well as Frameworks using
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Efficient Rendering Count
+
+Spitha has improved State Management where it can verify if API data is already fetched or not. It fetches once per render unless stated other wise the `fetchData` prop. This in-turn means that while the user may call the API fetch function multiple times on React, Spitha will run it only once. However, to ensure the data rendered is up-to-date, Spitha runs an Asynchronous Loading protocol that calls APIs when the user is not looking at the component (i.e., scrolled down is not indirectly looking at the component). 
+
+There has also been an improved Memoization technique employed in Spitha. It ensures the same callback instance is reused across renders and prevents unnecessary re-creation of the function. 
+
+Spitha can also be customizable in how it can accept rendering. There is a trigger prop which represents a threshold. This threshold represents the distance the user has to be away from the component for it re-render. Such an Example can be viewed in the <a href="#readme-top">Examples Section</a>.
+
+
 
 
 <!-- GETTING STARTED -->
@@ -131,9 +141,28 @@ After you have setup your project, make sure you have installed the `spitha` lib
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
+type MyComponentProps = {
+    fetchData: () => Promise<any>;
+    initialData?: any[];
+    threshold?: number;
+    children?: React.ReactNode; 
+    style?: React.CSSProperties;
+}
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+Spitha does come with a few props to customize the rendering performance. By default, it is set to maximize the performance, but the user may choose to send in props, apply css-styling, etc.
+
+| Spitha Props | Value| 
+| -------- | -------- | 
+| `fetchData`  | Callback Function: `Promise<any>`  | 
+| `initialData?` | `any[]` (optional) | 
+| `threshold?` | `number` (optional) | 
+| `children?` | React Object: `React.ReactNode` (optional) | 
+| `style?` | React Object: `React.CSSProperties` (optional) | 
+
+
+
 
 Here are a few examples on how to use Spitha. Do note that these are basic implementations, and Spitha may work for most React applications.
 
@@ -145,13 +174,11 @@ Here are a few examples on how to use Spitha. Do note that these are basic imple
         <h1>{`Test Component ${i + 1}`}</h1>
         <a href={`https://example.com/${i + 1}`}>Visit Test Component made with{i + 1}</a>
         <img src="image.jpg" alt="Image" />;
-    </div>
-                
+    </div>           
     ```
 
 ### ChakraUI Component Rendering with Spitha
     ```typescript
-
     import { Text } from "@chakra-ui/react";
     import { Spitha } from "spitha";
 
@@ -167,8 +194,19 @@ Here are a few examples on how to use Spitha. Do note that these are basic imple
         </div>
     );
     }
-
     ```
+
+### Changing Threshold 
+```typescript
+    <Spitha fetchData={() => Promise.resolve(['initialData'])} threshold={0.4} style={{ color: `#${i}${i}${i}` }}>
+      <h1>{`Test Component ${i + 1}`}</h1>
+      <a href={`https://example.com/${i + 1}`}>Visit Test Component {i + 1}</a>
+      <img src="image.jpg" alt="Image" />;
+    </Spitha>
+
+```
+Here, the `threshold` property is set to `0.4` which means Spitha will re-render when the user is 40% away from the component. Note that there has also a prop sent in the form of a promise `initialData` as a string.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,8 +223,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@patjaival](https://twitter.com/patjaival) 
-Project Link: [https://github.com/GEEGABYTE1/Spitha](https://github.com/GEEGABYTE1/Spitha)
+Jaival Patel - [@patjaival](https://twitter.com/patjaival) | 
+Spitha: [https://github.com/GEEGABYTE1/Spitha](https://github.com/GEEGABYTE1/Spitha)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
