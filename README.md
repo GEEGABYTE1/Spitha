@@ -30,7 +30,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/GEEGA/Best-README-Template">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -39,14 +39,14 @@
   <p align="center">
     A React Component Booster to Speed Rendering.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/GEEGABYTE1/Spitha"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">Homepage</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/GEEGABYTE1/Spitha/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/GEEGABYTE1/Spitha/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -58,9 +58,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -70,9 +67,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -144,34 +139,34 @@ Here are a few examples on how to use Spitha. Do note that these are basic imple
 
 ### Basic Data Implementation
     ```typescript
-        <div>
-            <WelcomeComponent> Welcome to Spitha!</WelcomeComponent>
-            <Text>React just got Faster!!!</Text>
-            <h1>{`Test Component ${i + 1}`}</h1>
-            <a href={`https://example.com/${i + 1}`}>Visit Test Component made with{i + 1}</a>
-            <img src="image.jpg" alt="Image" />;
-        </div>
+    <div>
+        <WelcomeComponent> Welcome to Spitha!</WelcomeComponent>
+        <Text>React just got Faster!!!</Text>
+        <h1>{`Test Component ${i + 1}`}</h1>
+        <a href={`https://example.com/${i + 1}`}>Visit Test Component made with{i + 1}</a>
+        <img src="image.jpg" alt="Image" />;
+    </div>
                 
     ```
 
 ### ChakraUI Component Rendering with Spitha
     ```typescript
 
-        import { Text } from "@chakra-ui/react";
-        import { Spitha } from "spitha";
+    import { Text } from "@chakra-ui/react";
+    import { Spitha } from "spitha";
 
-        export default function Home() {
-        return (
+    export default function Home() {
+    return (
+        <div>
+        <Spitha fetchData={() => Promise.resolve()}>
             <div>
-            <Spitha fetchData={() => Promise.resolve()}>
-                <div>
-                <Text fontSize='6xl'>React just got faster!!!</Text>
-                <Text>Yayyyyyyyyyy</Text>
-                </div>
-            </Spitha>
+            <Text fontSize='6xl'>React just got faster!!!</Text>
+            <Text>Yayyyyyyyyyy</Text>
             </div>
-        );
-        }
+        </Spitha>
+        </div>
+    );
+    }
 
     ```
 
